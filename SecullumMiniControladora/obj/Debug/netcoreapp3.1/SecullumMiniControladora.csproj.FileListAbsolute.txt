@@ -1,0 +1,15 @@
+C:\Users\gborba\source\repos\SecullumMiniControladora\SecullumMiniControladora\obj\Debug\netcoreapp3.1\SecullumMiniControladora.csprojAssemblyReference.cache
+C:\Users\gborba\source\repos\SecullumMiniControladora\SecullumMiniControladora\obj\Debug\netcoreapp3.1\SecullumMiniControladora.Form1.resources
+C:\Users\gborba\source\repos\SecullumMiniControladora\SecullumMiniControladora\obj\Debug\netcoreapp3.1\SecullumMiniControladora.csproj.GenerateResource.cache
+C:\Users\gborba\source\repos\SecullumMiniControladora\SecullumMiniControladora\obj\Debug\netcoreapp3.1\SecullumMiniControladora.AssemblyInfoInputs.cache
+C:\Users\gborba\source\repos\SecullumMiniControladora\SecullumMiniControladora\obj\Debug\netcoreapp3.1\SecullumMiniControladora.AssemblyInfo.cs
+C:\Users\gborba\source\repos\SecullumMiniControladora\SecullumMiniControladora\bin\Debug\netcoreapp3.1\SecullumMiniControladora.exe
+C:\Users\gborba\source\repos\SecullumMiniControladora\SecullumMiniControladora\bin\Debug\netcoreapp3.1\SecullumMiniControladora.deps.json
+C:\Users\gborba\source\repos\SecullumMiniControladora\SecullumMiniControladora\bin\Debug\netcoreapp3.1\SecullumMiniControladora.runtimeconfig.json
+C:\Users\gborba\source\repos\SecullumMiniControladora\SecullumMiniControladora\bin\Debug\netcoreapp3.1\SecullumMiniControladora.runtimeconfig.dev.json
+C:\Users\gborba\source\repos\SecullumMiniControladora\SecullumMiniControladora\bin\Debug\netcoreapp3.1\SecullumMiniControladora.dll
+C:\Users\gborba\source\repos\SecullumMiniControladora\SecullumMiniControladora\bin\Debug\netcoreapp3.1\SecullumMiniControladora.pdb
+C:\Users\gborba\source\repos\SecullumMiniControladora\SecullumMiniControladora\obj\Debug\netcoreapp3.1\SecullumMiniControladora.dll
+C:\Users\gborba\source\repos\SecullumMiniControladora\SecullumMiniControladora\obj\Debug\netcoreapp3.1\SecullumMiniControladora.pdb
+C:\Users\gborba\source\repos\SecullumMiniControladora\SecullumMiniControladora\obj\Debug\netcoreapp3.1\SecullumMiniControladora.genruntimeconfig.cache
+C:\Users\gborba\source\repos\SecullumMiniControladora\SecullumMiniControladora\obj\Debug\netcoreapp3.1\SecullumMiniControladora.csproj.CoreCompileInputs.cache

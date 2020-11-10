@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30611.23
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SecullumMiniControladora", "SecullumMiniControladora\SecullumMiniControladora.csproj", "{B2B9A7FE-527E-419E-9C93-A4FD7C730857}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B2B9A7FE-527E-419E-9C93-A4FD7C730857}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B2B9A7FE-527E-419E-9C93-A4FD7C730857}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B2B9A7FE-527E-419E-9C93-A4FD7C730857}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B2B9A7FE-527E-419E-9C93-A4FD7C730857}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4977E59D-C7B9-437C-9D09-7A4327900BAD}
+	EndGlobalSection
+EndGlobal

@@ -2,7 +2,9 @@
 
 Este documento define o protocolo de comunicação usado pela placa secullum.
 
-Os valores descritos neste documento estarão no formato decimal.
+Os valores descritos neste documento estão no formato decimal.
+
+Utilize a porta 1999 para realizar a comunicação com a placa.
 
 ## Estrutura dos comandos
 

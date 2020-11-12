@@ -29,25 +29,25 @@ namespace SecullumMiniControladora
             comboReles.DataSource = Enum.GetValues(typeof(Conexao.RelesEnum));
         }
 
-        private void btnAcionarRele_Click(object sender, EventArgs e)
+        private void AcionarRele(object sender, EventArgs e)
         {
             var releSelecionado = (Conexao.RelesEnum)comboReles.SelectedItem;
             conexao.Enviar(releSelecionado, Conexao.CodigoAcionamentoRele.Acionar);
         }
 
-        private void btnDesligar_Click(object sender, EventArgs e)
+        private void DesligarRele(object sender, EventArgs e)
         {
             var releSelecionado = (Conexao.RelesEnum)comboReles.SelectedItem;
             conexao.Enviar(releSelecionado, Conexao.CodigoAcionamentoRele.Desligar);
         }
 
-        private void btnAcionarPorTempo_Click(object sender, EventArgs e)
+        private void AcionarRelePorTempo(object sender, EventArgs e)
         {
             var releSelecionado = (Conexao.RelesEnum)comboReles.SelectedItem;
             conexao.Enviar(releSelecionado, Conexao.CodigoAcionamentoRele.AcionarPorTempo);
         }
 
-        private void txtPorta_KeyPress(object sender, KeyPressEventArgs e)
+        private void ValidacaoPorta(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
@@ -55,7 +55,7 @@ namespace SecullumMiniControladora
             }
         }
 
-        private void btnConectar_Click(object sender, EventArgs e)
+        private void Conectar(object sender, EventArgs e)
         {
             try
             {

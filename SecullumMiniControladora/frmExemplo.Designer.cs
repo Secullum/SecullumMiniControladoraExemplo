@@ -51,7 +51,7 @@ namespace SecullumMiniControladora
             this.btnAcionarRele.TabIndex = 0;
             this.btnAcionarRele.Text = "Acionar relé";
             this.btnAcionarRele.UseVisualStyleBackColor = true;
-            this.btnAcionarRele.Click += new System.EventHandler(this.AcionarRele);
+            this.btnAcionarRele.Click += new System.EventHandler(this.AcionarRele_Click);
             // 
             // btnAcionarPorTempo
             // 
@@ -61,7 +61,7 @@ namespace SecullumMiniControladora
             this.btnAcionarPorTempo.TabIndex = 2;
             this.btnAcionarPorTempo.Text = "Acionar por tempo";
             this.btnAcionarPorTempo.UseVisualStyleBackColor = true;
-            this.btnAcionarPorTempo.Click += new System.EventHandler(this.AcionarRelePorTempo);
+            this.btnAcionarPorTempo.Click += new System.EventHandler(this.AcionarRelePorTempo_Click);
             // 
             // btnDesligar
             // 
@@ -71,7 +71,7 @@ namespace SecullumMiniControladora
             this.btnDesligar.TabIndex = 2;
             this.btnDesligar.Text = "Desligar";
             this.btnDesligar.UseVisualStyleBackColor = true;
-            this.btnDesligar.Click += new System.EventHandler(this.DesligarRele);
+            this.btnDesligar.Click += new System.EventHandler(this.DesligarRele_Click);
             // 
             // btnConectar
             // 
@@ -81,7 +81,7 @@ namespace SecullumMiniControladora
             this.btnConectar.TabIndex = 2;
             this.btnConectar.Text = "Conectar";
             this.btnConectar.UseVisualStyleBackColor = true;
-            this.btnConectar.Click += new System.EventHandler(this.Conectar);
+            this.btnConectar.Click += new System.EventHandler(this.Conectar_Click);
             // 
             // comboReles
             // 
@@ -113,7 +113,7 @@ namespace SecullumMiniControladora
             this.txtPorta.Name = "txtPorta";
             this.txtPorta.Size = new System.Drawing.Size(100, 23);
             this.txtPorta.TabIndex = 5;
-            this.txtPorta.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ValidacaoPorta);
+            this.txtPorta.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ValidacaoPorta_Keypress);
             // 
             // label2
             // 

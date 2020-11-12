@@ -59,8 +59,7 @@ Código do comando: 100
 
 Exemplo para acionar o relé 2 por 3 segundos:
 
-
-Bin 019, 099, 000, 003, 100, 002, 011, 184, 166 <br>
+Dec 019, 099, 000, 003, 100, 002, 011, 184, 166 <br>
 Hex 13 63 00 03 64 02 0B BB A6
 
 ### Acionar relé continuamente
@@ -75,7 +74,7 @@ Código do comando: 101
 
 Exemplo para acionar o relé 1:
 
-Bin 019, 099, 000, 001, 101, 001, 021 <br>
+Dec 019, 099, 000, 001, 101, 001, 021 <br>
 Hex 13 63 00 01 65 01 15
 
 ### Desligar relé
@@ -90,7 +89,7 @@ Código do comando: 102
 
 Exemplo para desligar o relé 2:
 
-Bin 019, 099, 000, 001, 102, 002, 127 <br>
+Dec 019, 099, 000, 001, 102, 002, 127 <br>
 Hex 13 63 00 01 66 02 7F
 
 ### Informar estado do sensor

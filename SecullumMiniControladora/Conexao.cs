@@ -42,7 +42,7 @@ namespace SecullumMiniControladora
             m_client = new TcpClient();
             m_client.Connect(ip, porta);
             m_parar = false;
-            var task = new Task(() => Comunicacao());
+            var task = new Task(() => MonitorarComunicacao());
             task.Start();
             GerarLog("Conectado");
         }
@@ -74,7 +74,7 @@ namespace SecullumMiniControladora
             m_bytesEnviar = dados;
         }
 
-        private void Comunicacao()
+        private void MonitorarComunicacao()
         {
             try
             {

@@ -2,7 +2,7 @@
 
 namespace SecullumMiniControladora
 {
-    partial class Form1
+    partial class frmExemplo
     {
         /// <summary>
         ///  Required designer variable.
@@ -37,10 +37,10 @@ namespace SecullumMiniControladora
             this.comboReles = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.textIP = new System.Windows.Forms.TextBox();
-            this.textPorta = new System.Windows.Forms.TextBox();
+            this.txtPorta = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.rtxLog = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
             // 
             // btnAcionarRele
@@ -107,13 +107,13 @@ namespace SecullumMiniControladora
             this.textIP.Size = new System.Drawing.Size(100, 23);
             this.textIP.TabIndex = 5;
             // 
-            // textPorta
+            // txtPorta
             // 
-            this.textPorta.Location = new System.Drawing.Point(60, 85);
-            this.textPorta.Name = "textPorta";
-            this.textPorta.Size = new System.Drawing.Size(100, 23);
-            this.textPorta.TabIndex = 5;
-            this.textPorta.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textPorta_KeyPress);
+            this.txtPorta.Location = new System.Drawing.Point(60, 85);
+            this.txtPorta.Name = "txtPorta";
+            this.txtPorta.Size = new System.Drawing.Size(100, 23);
+            this.txtPorta.TabIndex = 5;
+            this.txtPorta.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPorta_KeyPress);
             // 
             // label2
             // 
@@ -133,24 +133,24 @@ namespace SecullumMiniControladora
             this.label3.TabIndex = 6;
             this.label3.Text = "Porta";
             // 
-            // richTextBox1
+            // rtxLog
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(485, 231);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.ReadOnly = true;
-            this.richTextBox1.Size = new System.Drawing.Size(145, 129);
-            this.richTextBox1.TabIndex = 8;
-            this.richTextBox1.Text = "";
+            this.rtxLog.Location = new System.Drawing.Point(485, 231);
+            this.rtxLog.Name = "rtxLog";
+            this.rtxLog.ReadOnly = true;
+            this.rtxLog.Size = new System.Drawing.Size(145, 129);
+            this.rtxLog.TabIndex = 8;
+            this.rtxLog.Text = "";
             // 
-            // Form1
+            // frmExemplo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(744, 442);
-            this.Controls.Add(this.richTextBox1);
+            this.Controls.Add(this.rtxLog);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textPorta);
+            this.Controls.Add(this.txtPorta);
             this.Controls.Add(this.textIP);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.comboReles);
@@ -158,9 +158,9 @@ namespace SecullumMiniControladora
             this.Controls.Add(this.btnDesligar);
             this.Controls.Add(this.btnAcionarPorTempo);
             this.Controls.Add(this.btnAcionarRele);
-            this.Name = "Form1";
-            this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.Name = "frmExemplo";
+            this.Text = "frmExemplo";
+            this.Load += new System.EventHandler(this.frmExemplo_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -175,10 +175,10 @@ namespace SecullumMiniControladora
         private System.Windows.Forms.ComboBox comboReles;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textIP;
-        private System.Windows.Forms.TextBox textPorta;
+        private System.Windows.Forms.TextBox txtPorta;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox rtxLog;
     }
 }
 

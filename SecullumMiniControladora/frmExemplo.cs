@@ -13,16 +13,16 @@ using static SecullumMiniControladora.Conexao;
 
 namespace SecullumMiniControladora
 {
-    public partial class Form1 : Form
+    public partial class frmExemplo : Form
     {
         Conexao conexao;
 
-        public Form1()
+        public frmExemplo()
         {
             InitializeComponent();          
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void frmExemplo_Load(object sender, EventArgs e)
         {
             conexao = new Conexao();
             conexao.GerarLog += GerarLog;
@@ -37,17 +37,17 @@ namespace SecullumMiniControladora
 
         private void btnDesligar_Click(object sender, EventArgs e)
         {
-            var releSececionado = (Conexao.RelesEnum)comboReles.SelectedItem;
-            conexao.Enviar(releSececionado, Conexao.CodigoAcionamentoRele.Desligar);
+            var releSelecionado = (Conexao.RelesEnum)comboReles.SelectedItem;
+            conexao.Enviar(releSelecionado, Conexao.CodigoAcionamentoRele.Desligar);
         }
 
         private void btnAcionarPorTempo_Click(object sender, EventArgs e)
         {
-            var releSececionado = (Conexao.RelesEnum)comboReles.SelectedItem;
-            conexao.Enviar(releSececionado, Conexao.CodigoAcionamentoRele.AcionarPorTempo);
+            var releSelecionado = (Conexao.RelesEnum)comboReles.SelectedItem;
+            conexao.Enviar(releSelecionado, Conexao.CodigoAcionamentoRele.AcionarPorTempo);
         }
 
-        private void textPorta_KeyPress(object sender, KeyPressEventArgs e)
+        private void txtPorta_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
@@ -61,7 +61,7 @@ namespace SecullumMiniControladora
             {
                 conexao.FecharConexao();
                 var ip = this.textIP.Text;
-                var porta = Convert.ToInt32(this.textPorta.Text);
+                var porta = Convert.ToInt32(this.txtPorta.Text);
                 conexao.CriarConexao(ip, porta);
             }
             catch (Exception)
@@ -77,8 +77,8 @@ namespace SecullumMiniControladora
 
         private void SetarMensagem(string message)
         {
-            richTextBox1.AppendText(message + Environment.NewLine);
-            richTextBox1.ScrollToCaret();
+            rtxLog.AppendText(message + Environment.NewLine);
+            rtxLog.ScrollToCaret();
         }
     }
 }

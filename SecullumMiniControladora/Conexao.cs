@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using System.Net.Sockets;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace SecullumMiniControladora
@@ -57,7 +55,7 @@ namespace SecullumMiniControladora
             }
         }
 
-        public void Enviar(RelesEnum rele, CodigoAcionamentoRele acaoRele)
+        public void Enviar(RelesEnum rele, CodigoAcionamentoRele acaoRele, int tempo = 0)
         {
             var dados = MontarMensagemBase();
             dados.Add((Byte)acaoRele);
@@ -65,8 +63,9 @@ namespace SecullumMiniControladora
 
             if (acaoRele == CodigoAcionamentoRele.AcionarPorTempo)
             {
-                dados.Add((Byte)(3000 / 256));
-                dados.Add((Byte)(3000 % 256));
+                var tempoLigado = tempo * 1000;
+                dados.Add((Byte)(tempoLigado / 256));
+                dados.Add((Byte)(tempoLigado % 256));
             }
 
             dados.Add((Byte)100);
@@ -99,7 +98,7 @@ namespace SecullumMiniControladora
             }
             catch (Exception)
             {
-                GerarLog("Erro na comunicação");
+                GerarLog("Erro ao conectar, verifique o IP e Porta informados!");
             }
         }
 
@@ -135,7 +134,7 @@ namespace SecullumMiniControladora
         private string ObterMensagemEstadoSensores(byte[] dados)
         {
             string estadoSensor = dados[6] == 1 ? "ligado" : "desligado";
-            var resposta = $"O sensor {dados[5]} encontra-se {estadoSensor}";
+            var resposta = $"Sensor {dados[5]} {estadoSensor}";
 
             return resposta;
         }

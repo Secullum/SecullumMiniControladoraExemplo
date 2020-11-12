@@ -1,15 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Net.Sockets;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using static SecullumMiniControladora.Conexao;
 
 namespace SecullumMiniControladora
 {
@@ -44,10 +34,10 @@ namespace SecullumMiniControladora
         private void AcionarRelePorTempo_Click(object sender, EventArgs e)
         {
             var releSelecionado = (Conexao.RelesEnum)comboReles.SelectedItem;
-            conexao.Enviar(releSelecionado, Conexao.CodigoAcionamentoRele.AcionarPorTempo);
+            conexao.Enviar(releSelecionado, Conexao.CodigoAcionamentoRele.AcionarPorTempo, Convert.ToInt32(txtTempo.Text));
         }
 
-        private void ValidacaoPorta_Keypress(object sender, KeyPressEventArgs e)
+        private void ValidacaoApenasNumero_Keypress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
@@ -66,7 +56,7 @@ namespace SecullumMiniControladora
             }
             catch (Exception)
             {
-                SetarMensagem("Erro ao se conectar, verifique o IP e porta informados!");
+                SetarMensagem("Erro ao conectar, verifique o IP e Porta informados!");
             }         
         }
 

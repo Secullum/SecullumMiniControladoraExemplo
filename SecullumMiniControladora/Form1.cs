@@ -26,28 +26,28 @@ namespace SecullumMiniControladora
         {
             conexao = new Conexao();
             conexao.GerarLog += GerarLog;
-            comboBox1.DataSource = Enum.GetValues(typeof(Conexao.RelesEnum));
+            comboReles.DataSource = Enum.GetValues(typeof(Conexao.RelesEnum));
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnAcionarRele_Click(object sender, EventArgs e)
         {
-            var releSececionado = (Conexao.RelesEnum)comboBox1.SelectedItem;
-            conexao.Enviar(releSececionado, Conexao.CodigoAcionamentoRele.ACIONAR);
+            var releSelecionado = (Conexao.RelesEnum)comboReles.SelectedItem;
+            conexao.Enviar(releSelecionado, Conexao.CodigoAcionamentoRele.Acionar);
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void btnDesligar_Click(object sender, EventArgs e)
         {
-            var releSececionado = (Conexao.RelesEnum)comboBox1.SelectedItem;
-            conexao.Enviar(releSececionado, Conexao.CodigoAcionamentoRele.DESLIGAR);
+            var releSececionado = (Conexao.RelesEnum)comboReles.SelectedItem;
+            conexao.Enviar(releSececionado, Conexao.CodigoAcionamentoRele.Desligar);
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void btnAcionarPorTempo_Click(object sender, EventArgs e)
         {
-            var releSececionado = (Conexao.RelesEnum)comboBox1.SelectedItem;
-            conexao.Enviar(releSececionado, Conexao.CodigoAcionamentoRele.ACIONARPORTEMPO);
+            var releSececionado = (Conexao.RelesEnum)comboReles.SelectedItem;
+            conexao.Enviar(releSececionado, Conexao.CodigoAcionamentoRele.AcionarPorTempo);
         }
 
-        private void textBox2_KeyPress(object sender, KeyPressEventArgs e)
+        private void textPorta_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
@@ -55,13 +55,13 @@ namespace SecullumMiniControladora
             }
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void btnConectar_Click(object sender, EventArgs e)
         {
             try
             {
                 conexao.FecharConexao();
-                var ip = this.textBox1.Text;
-                var porta = Convert.ToInt32(this.textBox2.Text);
+                var ip = this.textIP.Text;
+                var porta = Convert.ToInt32(this.textPorta.Text);
                 conexao.CriarConexao(ip, porta);
             }
             catch (Exception)

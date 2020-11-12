@@ -30,66 +30,66 @@ namespace SecullumMiniControladora
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.btnAcionarRele = new System.Windows.Forms.Button();
+            this.btnAcionarPorTempo = new System.Windows.Forms.Button();
+            this.btnDesligar = new System.Windows.Forms.Button();
+            this.btnConectar = new System.Windows.Forms.Button();
+            this.comboReles = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textIP = new System.Windows.Forms.TextBox();
+            this.textPorta = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
             // 
-            // button1
+            // btnAcionarRele
             // 
-            this.button1.Location = new System.Drawing.Point(37, 240);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(103, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Acionar relé";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnAcionarRele.Location = new System.Drawing.Point(37, 240);
+            this.btnAcionarRele.Name = "btnAcionarRele";
+            this.btnAcionarRele.Size = new System.Drawing.Size(103, 23);
+            this.btnAcionarRele.TabIndex = 0;
+            this.btnAcionarRele.Text = "Acionar relé";
+            this.btnAcionarRele.UseVisualStyleBackColor = true;
+            this.btnAcionarRele.Click += new System.EventHandler(this.btnAcionarRele_Click);
             // 
-            // button2
+            // btnAcionarPorTempo
             // 
-            this.button2.Location = new System.Drawing.Point(146, 240);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(115, 23);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Acionar por tempo";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btnAcionarPorTempo.Location = new System.Drawing.Point(146, 240);
+            this.btnAcionarPorTempo.Name = "btnAcionarPorTempo";
+            this.btnAcionarPorTempo.Size = new System.Drawing.Size(115, 23);
+            this.btnAcionarPorTempo.TabIndex = 2;
+            this.btnAcionarPorTempo.Text = "Acionar por tempo";
+            this.btnAcionarPorTempo.UseVisualStyleBackColor = true;
+            this.btnAcionarPorTempo.Click += new System.EventHandler(this.btnAcionarPorTempo_Click);
             // 
-            // button3
+            // btnDesligar
             // 
-            this.button3.Location = new System.Drawing.Point(267, 240);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "Desligar";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.btnDesligar.Location = new System.Drawing.Point(267, 240);
+            this.btnDesligar.Name = "btnDesligar";
+            this.btnDesligar.Size = new System.Drawing.Size(75, 23);
+            this.btnDesligar.TabIndex = 2;
+            this.btnDesligar.Text = "Desligar";
+            this.btnDesligar.UseVisualStyleBackColor = true;
+            this.btnDesligar.Click += new System.EventHandler(this.btnDesligar_Click);
             // 
-            // button4
+            // btnConectar
             // 
-            this.button4.Location = new System.Drawing.Point(74, 125);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 2;
-            this.button4.Text = "Conectar";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.btnConectar.Location = new System.Drawing.Point(74, 125);
+            this.btnConectar.Name = "btnConectar";
+            this.btnConectar.Size = new System.Drawing.Size(75, 23);
+            this.btnConectar.TabIndex = 2;
+            this.btnConectar.Text = "Conectar";
+            this.btnConectar.UseVisualStyleBackColor = true;
+            this.btnConectar.Click += new System.EventHandler(this.btnConectar_Click);
             // 
-            // comboBox1
+            // comboReles
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(132, 193);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 23);
-            this.comboBox1.TabIndex = 3;
+            this.comboReles.FormattingEnabled = true;
+            this.comboReles.Location = new System.Drawing.Point(132, 193);
+            this.comboReles.Name = "comboReles";
+            this.comboReles.Size = new System.Drawing.Size(121, 23);
+            this.comboReles.TabIndex = 3;
             // 
             // label1
             // 
@@ -100,20 +100,20 @@ namespace SecullumMiniControladora
             this.label1.TabIndex = 4;
             this.label1.Text = "Selecione o relé";
             // 
-            // textBox1
+            // textIP
             // 
-            this.textBox1.Location = new System.Drawing.Point(60, 56);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 23);
-            this.textBox1.TabIndex = 5;
+            this.textIP.Location = new System.Drawing.Point(60, 56);
+            this.textIP.Name = "textIP";
+            this.textIP.Size = new System.Drawing.Size(100, 23);
+            this.textIP.TabIndex = 5;
             // 
-            // textBox2
+            // textPorta
             // 
-            this.textBox2.Location = new System.Drawing.Point(60, 85);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 23);
-            this.textBox2.TabIndex = 5;
-            this.textBox2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox2_KeyPress);
+            this.textPorta.Location = new System.Drawing.Point(60, 85);
+            this.textPorta.Name = "textPorta";
+            this.textPorta.Size = new System.Drawing.Size(100, 23);
+            this.textPorta.TabIndex = 5;
+            this.textPorta.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textPorta_KeyPress);
             // 
             // label2
             // 
@@ -150,14 +150,14 @@ namespace SecullumMiniControladora
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textPorta);
+            this.Controls.Add(this.textIP);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.comboReles);
+            this.Controls.Add(this.btnConectar);
+            this.Controls.Add(this.btnDesligar);
+            this.Controls.Add(this.btnAcionarPorTempo);
+            this.Controls.Add(this.btnAcionarRele);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -168,14 +168,14 @@ namespace SecullumMiniControladora
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Button btnAcionarRele;
+        private System.Windows.Forms.Button btnAcionarPorTempo;
+        private System.Windows.Forms.Button btnDesligar;
+        private System.Windows.Forms.Button btnConectar;
+        private System.Windows.Forms.ComboBox comboReles;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textIP;
+        private System.Windows.Forms.TextBox textPorta;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.RichTextBox richTextBox1;

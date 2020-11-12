@@ -10,38 +10,38 @@ namespace SecullumMiniControladora
 {
     public class Conexao
     {
-        TcpClient client;
-        bool parar;
-        List<byte> bytesEnviar = new List<byte>();
+        TcpClient m_client;
+        bool m_parar;
+        List<byte> m_bytesEnviar = new List<byte>();
 
         public delegate void GerarResposta(string message);
         public event GerarResposta GerarLog;
 
         public enum RelesEnum
         {
-            RELE1 = 001,
-            RELE2 = 002
+            ReleUm = 001,
+            ReleDois = 002
         }
 
         public enum CodigoAcionamentoRele
         {
-            ACIONAR = 101,
-            ACIONARPORTEMPO = 100,
-            DESLIGAR = 102
+            Acionar = 101,
+            AcionarPorTempo = 100,
+            Desligar = 102
         }
 
         public enum CodigoMensagemPlacaSeculum
         {
-            SUCESSO = 1,
-            ERROOPERACAO = 2,
-            TROCAESTADOSENSOR = 200
+            Sucesso = 1,
+            ErroOperacao = 2,
+            TrocaEstadoSensor = 200
         }
 
         public void CriarConexao(string ip, int porta)
         {
-            client = new TcpClient();
-            client.Connect(ip, porta);
-            parar = false;
+            m_client = new TcpClient();
+            m_client.Connect(ip, porta);
+            m_parar = false;
             var task = new Task(() => Comunicacao());
             task.Start();
             GerarLog("Conectado");
@@ -49,10 +49,10 @@ namespace SecullumMiniControladora
 
         public void FecharConexao()
         {
-            if (client != null && client.Connected)
+            if (m_client != null && m_client.Connected)
             {
-                client.Close();
-                parar = true;
+                m_client.Close();
+                m_parar = true;
                 GerarLog("Desconectado");
             }
         }
@@ -63,25 +63,24 @@ namespace SecullumMiniControladora
             dados.Add((Byte)acaoRele);
             dados.Add((Byte)rele);
 
-            if (acaoRele == CodigoAcionamentoRele.ACIONARPORTEMPO)
+            if (acaoRele == CodigoAcionamentoRele.AcionarPorTempo)
             {
-
                 dados.Add((Byte)(3000 / 256));
                 dados.Add((Byte)(3000 % 256));
             }
 
             dados.Add((Byte)100);
 
-            bytesEnviar = dados;
+            m_bytesEnviar = dados;
         }
 
         private void Comunicacao()
         {
             try
             {
-                using (NetworkStream stream = client.GetStream())
+                using (NetworkStream stream = m_client.GetStream())
                 {
-                    while (!parar)
+                    while (!m_parar)
                     {
                         if (stream.DataAvailable)
                         {
@@ -90,10 +89,10 @@ namespace SecullumMiniControladora
                             ProcessarMensagemPlaca(buffer);
                         }
 
-                        if (bytesEnviar.Count != 0)
+                        if (m_bytesEnviar.Count != 0)
                         {
-                            stream.Write(bytesEnviar.ToArray());
-                            bytesEnviar = new List<byte>();
+                            stream.Write(m_bytesEnviar.ToArray());
+                            m_bytesEnviar = new List<byte>();
                         }
                     }
                 }
@@ -117,11 +116,11 @@ namespace SecullumMiniControladora
             var resultadoRequisicao = (int)dados[4];
             string mensagem;
 
-            if (resultadoRequisicao == (int)CodigoMensagemPlacaSeculum.TROCAESTADOSENSOR)
+            if (resultadoRequisicao == (int)CodigoMensagemPlacaSeculum.TrocaEstadoSensor)
             {
                 mensagem = ObterMensagemEstadoSensores(dados);
             }
-            else if (resultadoRequisicao == (int)CodigoMensagemPlacaSeculum.ERROOPERACAO)
+            else if (resultadoRequisicao == (int)CodigoMensagemPlacaSeculum.ErroOperacao)
             {
                 mensagem = "Erro na operação";
             }
@@ -135,8 +134,8 @@ namespace SecullumMiniControladora
 
         private string ObterMensagemEstadoSensores(byte[] dados)
         {
-            string releUm = dados[6] == 1 ? "ligado" : "desligado";
-            var resposta = $"O sensor {dados[5]} encontra-se {releUm}";
+            string estadoSensor = dados[6] == 1 ? "ligado" : "desligado";
+            var resposta = $"O sensor {dados[5]} encontra-se {estadoSensor}";
 
             return resposta;
         }

@@ -43,11 +43,13 @@ namespace SecullumMiniControladora
             this.rtxLog = new System.Windows.Forms.RichTextBox();
             this.txtTempo = new System.Windows.Forms.TextBox();
             this.lblTempo = new System.Windows.Forms.Label();
+            this.btnDesconectar = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnAcionarRele
             // 
-            this.btnAcionarRele.Location = new System.Drawing.Point(37, 240);
+            this.btnAcionarRele.Location = new System.Drawing.Point(37, 211);
             this.btnAcionarRele.Name = "btnAcionarRele";
             this.btnAcionarRele.Size = new System.Drawing.Size(103, 23);
             this.btnAcionarRele.TabIndex = 0;
@@ -57,7 +59,7 @@ namespace SecullumMiniControladora
             // 
             // btnAcionarPorTempo
             // 
-            this.btnAcionarPorTempo.Location = new System.Drawing.Point(146, 240);
+            this.btnAcionarPorTempo.Location = new System.Drawing.Point(37, 240);
             this.btnAcionarPorTempo.Name = "btnAcionarPorTempo";
             this.btnAcionarPorTempo.Size = new System.Drawing.Size(115, 23);
             this.btnAcionarPorTempo.TabIndex = 2;
@@ -67,7 +69,7 @@ namespace SecullumMiniControladora
             // 
             // btnDesligar
             // 
-            this.btnDesligar.Location = new System.Drawing.Point(267, 240);
+            this.btnDesligar.Location = new System.Drawing.Point(146, 211);
             this.btnDesligar.Name = "btnDesligar";
             this.btnDesligar.Size = new System.Drawing.Size(75, 23);
             this.btnDesligar.TabIndex = 2;
@@ -77,9 +79,9 @@ namespace SecullumMiniControladora
             // 
             // btnConectar
             // 
-            this.btnConectar.Location = new System.Drawing.Point(92, 120);
+            this.btnConectar.Location = new System.Drawing.Point(102, 120);
             this.btnConectar.Name = "btnConectar";
-            this.btnConectar.Size = new System.Drawing.Size(75, 23);
+            this.btnConectar.Size = new System.Drawing.Size(85, 23);
             this.btnConectar.TabIndex = 2;
             this.btnConectar.Text = "Conectar";
             this.btnConectar.UseVisualStyleBackColor = true;
@@ -104,16 +106,16 @@ namespace SecullumMiniControladora
             // 
             // textIP
             // 
-            this.textIP.Location = new System.Drawing.Point(78, 51);
+            this.textIP.Location = new System.Drawing.Point(135, 49);
             this.textIP.Name = "textIP";
-            this.textIP.Size = new System.Drawing.Size(100, 23);
+            this.textIP.Size = new System.Drawing.Size(113, 23);
             this.textIP.TabIndex = 5;
             // 
             // txtPorta
             // 
-            this.txtPorta.Location = new System.Drawing.Point(78, 80);
+            this.txtPorta.Location = new System.Drawing.Point(135, 78);
             this.txtPorta.Name = "txtPorta";
-            this.txtPorta.Size = new System.Drawing.Size(100, 23);
+            this.txtPorta.Size = new System.Drawing.Size(113, 23);
             this.txtPorta.TabIndex = 5;
             this.txtPorta.Text = "1999";
             this.txtPorta.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ValidacaoApenasNumero_Keypress);
@@ -121,7 +123,7 @@ namespace SecullumMiniControladora
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(55, 54);
+            this.label2.Location = new System.Drawing.Point(112, 52);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(17, 15);
             this.label2.TabIndex = 6;
@@ -130,7 +132,7 @@ namespace SecullumMiniControladora
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(37, 83);
+            this.label3.Location = new System.Drawing.Point(94, 81);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(35, 15);
             this.label3.TabIndex = 6;
@@ -147,28 +149,48 @@ namespace SecullumMiniControladora
             // 
             // txtTempo
             // 
-            this.txtTempo.Location = new System.Drawing.Point(174, 202);
+            this.txtTempo.Location = new System.Drawing.Point(160, 240);
             this.txtTempo.MaxLength = 2;
             this.txtTempo.Name = "txtTempo";
-            this.txtTempo.PlaceholderText = "Segundos";
-            this.txtTempo.Size = new System.Drawing.Size(61, 23);
+            this.txtTempo.Size = new System.Drawing.Size(27, 23);
             this.txtTempo.TabIndex = 5;
             this.txtTempo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ValidacaoApenasNumero_Keypress);
             // 
             // lblTempo
             // 
             this.lblTempo.AutoSize = true;
-            this.lblTempo.Location = new System.Drawing.Point(36, 205);
+            this.lblTempo.Location = new System.Drawing.Point(193, 244);
             this.lblTempo.Name = "lblTempo";
-            this.lblTempo.Size = new System.Drawing.Size(132, 15);
+            this.lblTempo.Size = new System.Drawing.Size(58, 15);
             this.lblTempo.TabIndex = 6;
-            this.lblTempo.Text = "Tempo de acionamento";
+            this.lblTempo.Text = "segundos";
+            // 
+            // btnDesconectar
+            // 
+            this.btnDesconectar.Location = new System.Drawing.Point(193, 120);
+            this.btnDesconectar.Name = "btnDesconectar";
+            this.btnDesconectar.Size = new System.Drawing.Size(82, 23);
+            this.btnDesconectar.TabIndex = 9;
+            this.btnDesconectar.Text = "Desconectar";
+            this.btnDesconectar.UseVisualStyleBackColor = true;
+            this.btnDesconectar.Click += new System.EventHandler(this.btnDesconectar_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(37, 276);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(87, 15);
+            this.label4.TabIndex = 10;
+            this.label4.Text = "Log de eventos";
             // 
             // frmExemplo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(426, 498);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.btnDesconectar);
             this.Controls.Add(this.lblTempo);
             this.Controls.Add(this.txtTempo);
             this.Controls.Add(this.rtxLog);
@@ -183,7 +205,7 @@ namespace SecullumMiniControladora
             this.Controls.Add(this.btnAcionarPorTempo);
             this.Controls.Add(this.btnAcionarRele);
             this.Name = "frmExemplo";
-            this.Text = "frmExemplo";
+            this.Text = "SecullumMiniControladoraExemplo";
             this.Load += new System.EventHandler(this.frmExemplo_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -205,6 +227,8 @@ namespace SecullumMiniControladora
         private System.Windows.Forms.RichTextBox rtxLog;
         private System.Windows.Forms.TextBox txtTempo;
         private System.Windows.Forms.Label lblTempo;
+        private System.Windows.Forms.Button btnDesconectar;
+        private System.Windows.Forms.Label label4;
     }
 }
 

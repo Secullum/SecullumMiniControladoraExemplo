@@ -9,32 +9,33 @@ namespace SecullumMiniControladora
 
         public frmExemplo()
         {
-            InitializeComponent();          
+            InitializeComponent();
         }
 
         private void frmExemplo_Load(object sender, EventArgs e)
         {
             conexao = new Conexao();
             conexao.GerarLog += GerarLog;
-            comboReles.DataSource = Enum.GetValues(typeof(Conexao.RelesEnum));
+            PopularCombo();
         }
 
         private void AcionarRele_Click(object sender, EventArgs e)
         {
-            var releSelecionado = (Conexao.RelesEnum)comboReles.SelectedItem;
-            conexao.Enviar(releSelecionado, Conexao.CodigoAcionamentoRele.Acionar);
+            conexao.Enviar(ObterEnumReleSelecionado(), Conexao.CodigoAcionamentoRele.Acionar);
         }
 
         private void DesligarRele_Click(object sender, EventArgs e)
         {
-            var releSelecionado = (Conexao.RelesEnum)comboReles.SelectedItem;
-            conexao.Enviar(releSelecionado, Conexao.CodigoAcionamentoRele.Desligar);
+            conexao.Enviar(ObterEnumReleSelecionado(), Conexao.CodigoAcionamentoRele.Desligar);
         }
 
         private void AcionarRelePorTempo_Click(object sender, EventArgs e)
         {
-            var releSelecionado = (Conexao.RelesEnum)comboReles.SelectedItem;
-            conexao.Enviar(releSelecionado, Conexao.CodigoAcionamentoRele.AcionarPorTempo, Convert.ToInt32(txtTempo.Text));
+            if (txtTempo.Text != "")
+            {
+                var tempo = Convert.ToInt32(txtTempo.Text);
+                conexao.Enviar(ObterEnumReleSelecionado(), Conexao.CodigoAcionamentoRele.AcionarPorTempo, tempo);
+            }
         }
 
         private void ValidacaoApenasNumero_Keypress(object sender, KeyPressEventArgs e)
@@ -57,7 +58,12 @@ namespace SecullumMiniControladora
             catch (Exception)
             {
                 SetarMensagem("Erro ao conectar, verifique o IP e Porta informados!");
-            }         
+            }
+        }
+
+        private void btnDesconectar_Click(object sender, EventArgs e)
+        {
+            conexao.FecharConexao();
         }
 
         private void GerarLog(string mensagem)
@@ -69,6 +75,24 @@ namespace SecullumMiniControladora
         {
             rtxLog.AppendText(message + Environment.NewLine);
             rtxLog.ScrollToCaret();
+        }
+
+        private Conexao.RelesEnum ObterEnumReleSelecionado()
+        {
+            var propriedade = comboReles.SelectedItem.GetType().GetProperty("Value");
+            var valorSelecionado = propriedade.GetValue(comboReles.SelectedItem, null).ToString();
+            Enum.TryParse(valorSelecionado, out Conexao.RelesEnum releSelecionado);
+
+            return releSelecionado;
+        }
+
+        private void PopularCombo()
+        {
+            comboReles.Items.Add(new { Text = "Relé 1", Value = Conexao.RelesEnum.ReleUm });
+            comboReles.Items.Add(new { Text = "Relé 2", Value = Conexao.RelesEnum.ReleDois });
+            comboReles.DisplayMember = "Text";
+            comboReles.ValueMember = "Value";
+            comboReles.SelectedIndex = 0;
         }
     }
 }

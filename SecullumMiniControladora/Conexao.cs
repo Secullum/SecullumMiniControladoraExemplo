@@ -98,7 +98,7 @@ namespace SecullumMiniControladora
             }
             catch (Exception)
             {
-                GerarLog("Erro ao conectar, verifique o IP e Porta informados!");
+                FecharConexao();
             }
         }
 
@@ -138,6 +138,5 @@ namespace SecullumMiniControladora
 
             return resposta;
         }
-
     }
 }

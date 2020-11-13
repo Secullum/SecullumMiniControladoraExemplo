@@ -51,9 +51,9 @@ namespace SecullumMiniControladora
             // 
             this.btnAcionarRele.Location = new System.Drawing.Point(37, 211);
             this.btnAcionarRele.Name = "btnAcionarRele";
-            this.btnAcionarRele.Size = new System.Drawing.Size(103, 23);
+            this.btnAcionarRele.Size = new System.Drawing.Size(72, 23);
             this.btnAcionarRele.TabIndex = 0;
-            this.btnAcionarRele.Text = "Acionar relé";
+            this.btnAcionarRele.Text = "Acionar";
             this.btnAcionarRele.UseVisualStyleBackColor = true;
             this.btnAcionarRele.Click += new System.EventHandler(this.AcionarRele_Click);
             // 
@@ -61,17 +61,17 @@ namespace SecullumMiniControladora
             // 
             this.btnAcionarPorTempo.Location = new System.Drawing.Point(37, 240);
             this.btnAcionarPorTempo.Name = "btnAcionarPorTempo";
-            this.btnAcionarPorTempo.Size = new System.Drawing.Size(115, 23);
+            this.btnAcionarPorTempo.Size = new System.Drawing.Size(152, 23);
             this.btnAcionarPorTempo.TabIndex = 2;
-            this.btnAcionarPorTempo.Text = "Acionar por tempo";
+            this.btnAcionarPorTempo.Text = "Acionar por";
             this.btnAcionarPorTempo.UseVisualStyleBackColor = true;
             this.btnAcionarPorTempo.Click += new System.EventHandler(this.AcionarRelePorTempo_Click);
             // 
             // btnDesligar
             // 
-            this.btnDesligar.Location = new System.Drawing.Point(146, 211);
+            this.btnDesligar.Location = new System.Drawing.Point(115, 211);
             this.btnDesligar.Name = "btnDesligar";
-            this.btnDesligar.Size = new System.Drawing.Size(75, 23);
+            this.btnDesligar.Size = new System.Drawing.Size(74, 23);
             this.btnDesligar.TabIndex = 2;
             this.btnDesligar.Text = "Desligar";
             this.btnDesligar.UseVisualStyleBackColor = true;
@@ -90,19 +90,19 @@ namespace SecullumMiniControladora
             // comboReles
             // 
             this.comboReles.FormattingEnabled = true;
-            this.comboReles.Location = new System.Drawing.Point(132, 173);
+            this.comboReles.Location = new System.Drawing.Point(100, 182);
             this.comboReles.Name = "comboReles";
-            this.comboReles.Size = new System.Drawing.Size(121, 23);
+            this.comboReles.Size = new System.Drawing.Size(89, 23);
             this.comboReles.TabIndex = 3;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(37, 176);
+            this.label1.Location = new System.Drawing.Point(37, 185);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(89, 15);
+            this.label1.Size = new System.Drawing.Size(57, 15);
             this.label1.TabIndex = 4;
-            this.label1.Text = "Selecione o relé";
+            this.label1.Text = "Selecione";
             // 
             // textIP
             // 
@@ -149,7 +149,7 @@ namespace SecullumMiniControladora
             // 
             // txtTempo
             // 
-            this.txtTempo.Location = new System.Drawing.Point(160, 240);
+            this.txtTempo.Location = new System.Drawing.Point(195, 240);
             this.txtTempo.MaxLength = 2;
             this.txtTempo.Name = "txtTempo";
             this.txtTempo.Size = new System.Drawing.Size(27, 23);
@@ -159,7 +159,7 @@ namespace SecullumMiniControladora
             // lblTempo
             // 
             this.lblTempo.AutoSize = true;
-            this.lblTempo.Location = new System.Drawing.Point(193, 244);
+            this.lblTempo.Location = new System.Drawing.Point(228, 244);
             this.lblTempo.Name = "lblTempo";
             this.lblTempo.Size = new System.Drawing.Size(58, 15);
             this.lblTempo.TabIndex = 6;
